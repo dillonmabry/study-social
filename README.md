@@ -5,6 +5,8 @@ Based off Ben Awad tutorial series for AirBNB clone: https://www.youtube.com/pla
 
 Initial concept/prototype to be deployed using GraphQL/React/TypeScript/Postgres.
 
+Wireframe and concepts: https://www.fluidui.com/editor/live/preview/cF8yMTl1eTRINjhRZ0lxU2ZQejNFSzR6ODNNbkdGem9rcA==
+
 ## Components
 - App (React Native)
 - Web
