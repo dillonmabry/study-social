@@ -1,0 +1,7 @@
+@import "~antd/dist/antd.css";
+/* Override global settings create-react-app Ant Design */
+:global(.ant-btn-primary) {
+  background-color: rgb(0, 80, 179) !important;
+  border-color: rgb(0, 80, 179)!important;
+  color: #ffffff;
+}

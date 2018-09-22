@@ -1,0 +1,29 @@
+.register-form {
+  max-width: 500px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.register-form-button {
+    width: 100%;
+}
+.register-header {
+  text-align: center;
+  margin-top: 100px;
+}
+@media (min-width: 768px) {
+    .register-form {
+      width: 750px;
+    }
+  }
+  @media (min-width: 992px) {
+    .register-form {
+      width: 970px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .register-form {
+      width: 1170px;
+    }
+  }
