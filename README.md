@@ -1,6 +1,8 @@
 # Study Social
 Social-based learning app for all seeking knowledge. An idea to promote open-source collaboration as well as team-based learning for everyone.
 
+Based off Ben Awad tutorial series for AirBNB clone: https://www.youtube.com/playlist?list=PLN3n1USn4xlnfJIQBa6bBjjiECnk6zL6s
+
 Initial concept/prototype to be deployed using GraphQL/React/TypeScript/Postgres.
 
 ## Components
