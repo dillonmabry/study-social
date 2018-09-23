@@ -5,6 +5,9 @@ import { RouteComponentProps } from 'react-router-dom';
 
 export class ChangePasswordConnector extends React.PureComponent
   <RouteComponentProps<{key: string}>> {
+    onChangePassword = () => {
+      this.props.history.push('/login');
+    }
     render() {
         const { 
           match: { 
@@ -15,7 +18,9 @@ export class ChangePasswordConnector extends React.PureComponent
         return (
             <ChangePasswordController>
               {({submit}) => <ChangePasswordView 
-                submit={async({ newPassword}) => submit({key, newPassword})} />}
+                onChangePassword={this.onChangePassword}
+                submit={async({ newPassword}) => submit({key, newPassword})} 
+              />}
             </ChangePasswordController>
         );
     }

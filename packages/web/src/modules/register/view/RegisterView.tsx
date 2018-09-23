@@ -14,7 +14,8 @@ interface FormValues {
 }
 
 interface Props {
-    submit: (values: FormValues) => Promise<FormikErrors<FormValues> | null>;
+    submit: (values: FormValues) => Promise<FormikErrors<FormValues> | null>,
+    onConfirm: () => void
 }
 
 class RegisterComponent extends React.PureComponent<FormikProps<FormValues> & Props> {
@@ -67,6 +68,8 @@ export const RegisterView = withFormik<Props, FormValues>({
         const errors = await props.submit(values);
         if (errors) {
             setErrors(errors);
+        } else {
+            props.onConfirm();
         }
     }
 })(RegisterComponent);

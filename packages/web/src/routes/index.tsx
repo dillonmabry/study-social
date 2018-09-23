@@ -4,6 +4,7 @@ import { RegisterConnector } from '../modules/register/RegisterConnector';
 import { LoginConnector } from '../modules/login/LoginConnector';
 import { ForgotPasswordConnector } from '../modules/forgotPassword/ForgotPasswordConnector';
 import { ChangePasswordConnector } from '../modules/changedPassword/ChangePasswordConnector';
+import { ConfirmationMessage } from '../modules/shared/Confirmation';
 
 export const Routes = () => (
     <BrowserRouter>
@@ -12,6 +13,7 @@ export const Routes = () => (
             <Route exact={true} path="/login" component={LoginConnector} />
             <Route exact={true} path="/forgot-password" component={ForgotPasswordConnector} />
             <Route exact={true} path="/change-password/:key" component={ChangePasswordConnector} />
+            <Route path="/confirmation/" component={ConfirmationMessage} />
         </Switch>
     </BrowserRouter>
 )

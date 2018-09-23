@@ -13,6 +13,7 @@ interface FormValues {
 }
 
 interface Props {
+    onChangePassword: () => void;
     submit: (values: FormValues) => Promise<FormikErrors<FormValues> | null>;
 }
 
@@ -20,7 +21,7 @@ class ChangePasswordComponent extends React.PureComponent<FormikProps<FormValues
     render() {
         return (
             <div>
-                <h2 className="changep-header">Reset Password</h2>
+                <h2 className="changep-header">Change Password</h2>
                 <Form>
                     <div className="changep-form">
                         <Field
@@ -57,6 +58,8 @@ export const ChangePasswordView = withFormik<Props, FormValues>({
         const errors = await props.submit(values);
         if (errors) {
             setErrors(errors);
+        } else {
+            props.onChangePassword();
         }
     }
 })(ChangePasswordComponent);

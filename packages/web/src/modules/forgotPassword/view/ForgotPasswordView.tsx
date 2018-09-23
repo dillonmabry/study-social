@@ -12,6 +12,7 @@ interface FormValues {
 }
 
 interface Props {
+    onForgotPassword: () => void;
     submit: (values: FormValues) => Promise<FormikErrors<FormValues> | null>;
 }
 
@@ -54,6 +55,8 @@ export const ForgotPasswordView = withFormik<Props, FormValues>({
         const errors = await props.submit(values);
         if (errors) {
             setErrors(errors);
+        } else {
+            props.onForgotPassword();
         }
     }
 })(ForgotPasswordComponent);
