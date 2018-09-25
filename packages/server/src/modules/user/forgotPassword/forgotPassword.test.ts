@@ -46,12 +46,11 @@ describe("forgot password", () => {
     // make sure you can't login to locked account
     expect(await client.login(email, password)).toEqual({
       data: {
-        login: [
+        login: 
           {
-            path: "email",
-            message: forgotPasswordLockedError
+            errors: [{ message: forgotPasswordLockedError, path: "email" }],
+            sessionId: null
           }
-        ]
       }
     });
 
@@ -80,17 +79,16 @@ describe("forgot password", () => {
       data: {
         forgotPasswordChange: [
           {
-            path: "key",
+            path: "newPassword",
             message: expiredKeyError
           }
         ]
       }
     });
 
-    expect(await client.login(email, newPassword)).toEqual({
-      data: {
-        login: null
-      }
-    });
+    const loginResponse = await client.login(email, newPassword)
+    expect(
+      loginResponse
+    ).toHaveProperty("data.login.errors", null)
   });
 });

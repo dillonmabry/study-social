@@ -24,12 +24,11 @@ const loginExpectError = async (e: string, p: string, errMsg: string) => {
   const response = await client.login(e, p);
 
   expect(response.data).toEqual({
-    login: [
+    login: 
       {
-        path: "email",
-        message: errMsg
+        errors: [{ message: errMsg, path: "email" }],
+        sessionId: null
       }
-    ]
   });
 };
 
@@ -53,6 +52,12 @@ describe("login", () => {
 
     const response = await client.login(email, password);
 
-    expect(response.data).toEqual({ login: null });
+    expect(response.data).toEqual({ 
+      login: 
+      {
+        errors: null,
+        sessionId: response.data.login.sessionId
+      } 
+    });
   });
 });
